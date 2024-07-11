@@ -1,0 +1,4 @@
+#Wed Jul 10 14:51:25 COT 2024
+base.0=D\:\\Capacitacion\\Flutter\\formulario_app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
