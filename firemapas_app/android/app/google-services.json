@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "167372583321",
+    "project_id": "firemaps-148ad",
+    "storage_bucket": "firemaps-148ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167372583321:android:5522473b2bb854352da308",
+        "android_client_info": {
+          "package_name": "com.example.firemaps_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDgdfi5YWod2s5Px2dSf_tgO8ZXTDCZuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
