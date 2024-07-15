@@ -10,12 +10,13 @@ class HomeScreen extends StatelessWidget {
   void _addRandomPlaces() { 
     var places = [
       {
-        "name": "Central Park", "latitude": 40.785091,
-        "longitude": -73.968285,
+        "name": "Alicantie II", "latitude": 4.631228274334762,
+        "longitude": -74.19731002328763,
       },
+      
       {
-        "name": "Golden Gate Park", "latitude": 37.769420,
-        "longitude": -122.486213,
+        "name": "Taller", "latitude": 4.5868563140848435, 
+        "longitude": -74.17054007780119,
       },
     ];
     for (var place in places) {
