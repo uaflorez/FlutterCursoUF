@@ -23,7 +23,7 @@
       </div>     
       <router-outlet />
     </ng-template>
-    <ng-template #elseBlock>
+    <!--<ng-template #elseBlock>
       <section class="gradient-form" style="background-color: #eee;">
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
@@ -34,6 +34,7 @@
                     <div class="card-body p-md-5 mx-md-4">      
                       <form>
                         <div data-mdb-input-init class="form-outline mb-4">
+                          <label>User:</label>
                           <label class="form-label" for="form2Example11">Username</label> <br/>
                           <input type="text"  maxLength="15" [(ngModel)]="lstrUser" class="form-control" id="User"/>
                         </div>      
@@ -57,17 +58,18 @@
           </div>
         </div>
       </section>
-    </ng-template>
-    <!-- <ng-template #elseBlock>
+    </ng-template> -->
+    <ng-template #elseBlock>
       <div>
         <div>
-          <label>User:</label>
+          <label class="form-label" for="form2Example11">User: </label> <br/>
           <input type="text" maxlength="15" [(ngModel)]="lstrUser">
         </div>
         <div>
-          <label> Password: </label>
+          <label class="form-label" for="form2Example22"> Password: </label> <br/>
           <input type = "text" maxlength= "15" [(ngModel)]="lstrPass">
         </div>
+        <br/>
         <div>
           <button type="button" (click)="fnLogIN()">login</button>
         </div>
@@ -78,6 +80,6 @@
           <button type="button" (click)="fnSignUp()">Sign Up</button>
         </div>
       </div>
-    </ng-template>-->
+    </ng-template>
   </div>
 </ng-template>
