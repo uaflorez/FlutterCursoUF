@@ -3,6 +3,7 @@ import { DataService } from '../../services/data.service';
 import { ServiceService } from '../../services/service.service';
 import { Column, GridOption } from 'angular-slickgrid';
 
+
 @Component({
   selector: 'app-accounts',
   templateUrl: './accounts.component.html',
@@ -11,16 +12,15 @@ import { Column, GridOption } from 'angular-slickgrid';
 export class AccountsComponent implements OnInit{
 
   constructor(private data: DataService, private service: ServiceService){}
-
+  codeUser: string = '';
   CDAccounts: Column[] = [];
   GPAccounts: GridOption = {};
   dsAccounts: any[] = [];
 
   lAccounts: any[] = [];
-  lstrUser: string = "";
 
 
-  ngOnInit(){
+  ngOnInit() {
     this.GPAccounts = {
       autoResize: {container: '#idgridAccounts', rightPadding: 5},
       enableAutoResize: true,
@@ -32,12 +32,11 @@ export class AccountsComponent implements OnInit{
     };
     this.CDAccounts.push({id: 'NumeCuent', name:'Número', field: 'NumeCuen', sortable: true, filterable: true});
     this.CDAccounts.push({id: 'NombCuent', name:'Nombre', field: 'NombCuen', sortable: true, filterable: true});
-    this.CDAccounts.push({id: 'NombCuent', name:'Nombre', field: 'NombCuen', sortable: true, filterable: true});
   
   }
 
   fnGetAccounts(){
-    this.data.fnGetAccounts(this.service.lstrUser).subscribe({next: res => {
+    this.data.fnGetAccounts(this.codeUser).subscribe({next: res => {
         this.lAccounts = res;
         this.dsAccounts = res;
     }})

@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AngularSlickgridModule, ContainerService } from 'angular-slickgrid'
 
 import { AccountsRoutingModule } from './accounts-routing.module';
 import { AccountsComponent } from './accounts.component';
 
+import { AngularSlickgridModule, ContainerService } from 'angular-slickgrid';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { AccountsComponent } from './accounts.component';
   imports: [
     CommonModule,
     AccountsRoutingModule,
+    FormsModule,
     AngularSlickgridModule.forRoot({
       enableCellNavigation: true,
       autoHeight: false,
