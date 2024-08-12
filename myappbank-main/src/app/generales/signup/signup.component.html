@@ -1,5 +1,20 @@
-<p>signup works!</p>
+<div class="container-md">
+    <!-- <p>signup works!</p> -->
+    <div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Codigo Usuario</span>
+            <input type="text" class="form-control" name="codeUser" [(ngModel)] = "codeUser"/>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Nombre de Usuario</span>
+            <input type="text" class="form-control" name="nombreUser" [(ngModel)] = "nombreUser"/>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Password </span>
+            <input type="text" class="form-control" name="password" [(ngModel)] = "password"/>
+        </div>
+        <button type="button" (click)="fnSignUp()">Registrar </button>  
+        <button type="button" (click)="fnCancelSingUp()">Cancelar </button>  
+    </div>
 
-<div>
-    <button type="button" (click)="fnCancel()">Cancelar</button>  
 </div>

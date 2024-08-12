@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { AccountsRoutingModule } from './accounts-routing.module';
 import { AccountsComponent } from './accounts.component';
-
 import { AngularSlickgridModule, ContainerService } from 'angular-slickgrid';
 import { FormsModule } from '@angular/forms';
+import { MypipePipe } from '../../pipes/mypipe.pipe';
 
 @NgModule({
   declarations: [
-    AccountsComponent
+    AccountsComponent,
+    MypipePipe
   ],
   imports: [
     CommonModule,
@@ -26,3 +26,4 @@ import { FormsModule } from '@angular/forms';
   providers: [ContainerService]
 })
 export class AccountsModule { }
+ 

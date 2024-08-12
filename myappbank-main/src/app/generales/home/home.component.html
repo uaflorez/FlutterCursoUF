@@ -1,15 +1,26 @@
-<p>home works!</p>
+<div class="container-md">
 
-
-<div *ngIf="this.lbolUserLogu; then thenBlock else elseBlock"></div>
-<ng-template #thenBlock>
-  <div>
-        <label>eqtiqueta 1</label>
-  </div>     
-  <router-outlet />
-</ng-template>
-<ng-template #elseBlock>
+  <p>Estas en el home de la app</p>  
+  <div *ngIf="this.lbolUserLogu; then thenBlock else elseBlock"></div>
+  <ng-template #thenBlock>
     <div>
-        <label>eqtiqueta 2</label>
-    </div>
-</ng-template>
+          <p>Hoy es {{ldtFecha | date}} </p>
+          <p>Hoy es {{ldtFecha | date: "dd/MM/yy"}} </p>
+          <p>Hoy es {{ldtFecha | date: "dd/MM/yyyy"}} </p>
+          <p>Hoy es {{ldtFecha | json}}</p>
+          <p>Valor {{lnumValor}} </p>
+          <p>Valor {{lnumValor | currency}} </p>
+          <p>Valor {{lnumPerc}} </p>
+          <p>Valor {{lnumPerc | percent}} </p>
+          <p>Texto {{lstrTexto}} </p>
+          <p>Texto {{lstrTexto | lowercase}} </p>
+          <p>Texto {{lstrTexto | uppercase}} </p>
+    </div>     
+    <router-outlet />
+  </ng-template>
+  <ng-template #elseBlock>
+      <div>
+          <label>debe ir algo que aun no se que sera</label>
+      </div>
+  </ng-template>
+</div>

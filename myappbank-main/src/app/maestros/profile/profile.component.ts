@@ -9,10 +9,11 @@ import { debounceTime, switchMap } from 'rxjs/operators';
   styleUrl: './profile.component.scss'
 })
 export class ProfileComponent implements OnInit, OnDestroy{
+  lstrColor: string = 'white';
 
   constructor(private data: DataService) { }
-  codeUser: string = '';
-  codeUser2: string = '';
+  codiUser: string = '';
+  codiUser2: string = '';
   nombUser: string = '';
   password: string = '';
 
@@ -22,7 +23,7 @@ export class ProfileComponent implements OnInit, OnDestroy{
     const result = evKeyUp.pipe(debounceTime(300));
     result.subscribe({next: (x) => {
       var target = x.target as HTMLInputElement;
-      if (target.name == 'codeUser2') {
+      if (target.name == 'codiUser2') {
         console.log(target);
         this.fnValidProf();
       }
@@ -41,13 +42,19 @@ export class ProfileComponent implements OnInit, OnDestroy{
   }
 
   fnValidProf() {
-    this.data.fnValidProfile(this.codeUser2).subscribe({
+    this.data.fnValidProfile(this.codiUser2).subscribe({
       next: res => {
         this.nombUser = res[0].NombUsua;
         this.password = res[0].PassUser;
         console.log(res);
       }
     })
+  }
+  fnFondoBlanco() {
+    this.lstrColor = 'white';
+  }
+  fnFondoAmarillo() {
+    this.lstrColor = 'yellow';
   }
 
 

@@ -1,14 +1,31 @@
-<br>
-<input type = "text" [(ngModel)] = "codeUser"/>
-<button type="button" (click)="fnGetAccounts()">Get Accounts</button>
-<br>
-<br>
-<div>
-    <div id="idgridAccounts" class="grid">
-        <angular-slickgrid gridId="gridAccounts" 
-            [columnDefinitions]="CDAccounts" 
-            [gridOptions]="GPAccounts"
-            [dataset]="dsAccounts">
-        </angular-slickgrid>
+<div class="container-md">
+
+    <br>
+    <label for="text">User</label> <br>
+    <input type = "text" [(ngModel)] = "codiUser"/>
+    <button type="button" (click)="fnGetAccounts()" class="btn btn-primary" >Get Accounts</button>
+    <br>
+    <br>
+    <table *ngIf="lAccounts">
+        <tr *ngFor="let row of lAccounts">
+          <th>{{ row.NumeCuen }}</th>
+          <th>{{ row.NombCuen }}</th>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <div class="container-md">
+        <div id="idgridAccounts" class="grid">
+            <angular-slickgrid gridId="gridAccounts" 
+                [columnDefinitions]="CDAccounts" 
+                [gridOptions]="GPAccounts"
+                [dataset]="dsAccounts">
+            </angular-slickgrid>
+        </div>
+    </div>
+    <div class="container-md">
+        <p>Número de Cuenta <input type="text" [(ngModel)]="lstrNumeCuen" > </p>
+
+        <pre>{{lAccounts | mypipe:lstrNumeCuen | json}}</pre>
     </div>
 </div>

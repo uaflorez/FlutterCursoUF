@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { ServiceService } from '../../services/service.service';
 import { Column, GridOption } from 'angular-slickgrid';
@@ -11,13 +11,15 @@ import { Column, GridOption } from 'angular-slickgrid';
 })
 export class AccountsComponent implements OnInit{
 
-  constructor(private data: DataService, private service: ServiceService){}
-  codeUser: string = '';
+  codiUser: string = '';
   CDAccounts: Column[] = [];
   GPAccounts: GridOption = {};
   dsAccounts: any[] = [];
-
   lAccounts: any[] = [];
+  lstrNumeCuen: any;
+  
+  constructor(private data: DataService, public service: ServiceService) { }
+  
 
 
   ngOnInit() {
@@ -36,10 +38,9 @@ export class AccountsComponent implements OnInit{
   }
 
   fnGetAccounts(){
-    this.data.fnGetAccounts(this.codeUser).subscribe({next: res => {
+    this.data.fnGetAccounts(this.codiUser).subscribe({next: res => {
         this.lAccounts = res;
         this.dsAccounts = res;
     }})
   }
-
 }

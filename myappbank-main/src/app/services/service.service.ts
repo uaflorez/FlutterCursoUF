@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class ServiceService {
 
-  
-  lbolSignUp: boolean = false;
+  gBoolUserSingUp: boolean = false;
+  //lbolSignUp: boolean = false;
   lstrUser: string = '';
 
   constructor() { }

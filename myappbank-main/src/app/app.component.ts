@@ -38,6 +38,6 @@ export class AppComponent {
   }
 
   fnSignUp(){
-    this.service.lbolSignUp = true;
+    this.service.gBoolUserSingUp = true;
   }
 }
