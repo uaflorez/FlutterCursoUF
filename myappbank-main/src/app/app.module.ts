@@ -6,10 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideHttpClient } from '@angular/common/http';
 import { SignupModule } from './generales/signup/signup.module';
+import { MydirectiveDirective } from './directives/mydirective.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MydirectiveDirective
+
   ],
   imports: [
     BrowserModule,

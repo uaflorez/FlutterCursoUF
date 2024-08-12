@@ -1,1 +1,23 @@
-<button type="button" (click)="fnGetAccounts()">Get Accounts</button>
+<div class="container-md">
+
+	<label class="form-label" for="form2Example11">codiUser: </label> <br/>
+	<input type = "text" name="codiUser" [(ngModel)] = "codiUser" (keyup)="fnValidProf()" /> <br/>
+	<label class="form-label" for="form2Example11">codiUser2: </label> <br/>
+	<input type = "text" name="codiUser2" [(ngModel)] = "codiUser2" /><br/>
+	<label class="form-label" for="form2Example11">Nombre Usuario: </label> <br/>
+	<input type = "text" name="nombUser" [(ngModel)] = "nombUser" (keyup)="fnValidProf()" /><br/>
+	<label class="form-label" for="form2Example11">Passord: </label> <br/>
+	<input type = "text" name="password" [(ngModel)] = "password" (keyup)="fnValidProf()" /><br/>
+	
+	
+	<button type="button" (click)="fnGetAccounts()">Get Accounts</button>
+
+	<p [ngStyle]="{'background':lstrColor == 'white' ? 'white': 'yellow'}" >Etiqueta de atributo</p>
+
+	<button type="button" (click)="fnFondoBlanco()" >Fondo blanco</button>
+	<button type="button" (click)="fnFondoAmarillo()" >Fondo amarillo</button>
+
+	<p appMydirective>Mi directiva</p>
+</div>
+
+

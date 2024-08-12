@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ServiceService } from '../../services/service.service';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-signup',
@@ -8,10 +9,26 @@ import { ServiceService } from '../../services/service.service';
 })
 export class SignupComponent {
 
-  constructor(public service: ServiceService){}
+  codeUser: string = "";
+  nombreUser: string = "";
+  password: string = "";
 
-  fnCancel(){
-    this.service.lbolSignUp = false;
+  constructor(private service: ServiceService, private dataService : DataService){}
+
+  fnCancelSingUp(){
+    this.service.gBoolUserSingUp = false;
+  }
+  
+  fnSignUp() {
+    this.dataService.fnSingUp(this.codeUser, this.nombreUser, this.password).subscribe({
+      next: res => {
+        console.log(res);
+      },
+      error: err => {
+        console.log(err);
+      }
+    });
+    console.log("listo");
   }
 
 
