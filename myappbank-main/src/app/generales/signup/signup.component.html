@@ -3,18 +3,23 @@
     <div>
         <div class="input-group mb-3">
             <span class="input-group-text">Codigo Usuario</span>
-            <input type="text" class="form-control" name="codeUser" [(ngModel)] = "codeUser"/>
+            <input type="text" class="form-control" name="codeUser" [(ngModel)] = "codiUser"/>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text">Nombre de Usuario</span>
-            <input type="text" class="form-control" name="nombreUser" [(ngModel)] = "nombreUser"/>
+            <input type="text" class="form-control" name="nombreUser" [(ngModel)] = "nombUser"/>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text">Password </span>
             <input type="text" class="form-control" name="password" [(ngModel)] = "password"/>
         </div>
         <button type="button" (click)="fnSignUp()">Registrar </button>  
-        <button type="button" (click)="fnCancelSingUp()">Cancelar </button>  
+        <br>
+        <div>
+            <label>{{lstrMensaje}} </label>
+        </div>
+        <br>
+        <button type="button" (click)="fnCancelSignUp()">Cancelar </button>  
     </div>
 
 </div>

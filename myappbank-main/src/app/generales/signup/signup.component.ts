@@ -9,24 +9,31 @@ import { DataService } from '../../services/data.service';
 })
 export class SignupComponent {
 
-  codeUser: string = "";
-  nombreUser: string = "";
-  password: string = "";
+  codiUser: string = '';
+  nombUser: string = '';
+  password: string = '';
+  lstrMensaje: string = '';
 
   constructor(private service: ServiceService, private dataService : DataService){}
 
-  fnCancelSingUp(){
+  fnCancelSignUp(){
     this.service.gBoolUserSingUp = false;
   }
   
   fnSignUp() {
-    this.dataService.fnSingUp(this.codeUser, this.nombreUser, this.password).subscribe({
-      next: res => {
-        console.log(res);
+    this.dataService.fnSignUp(this.codiUser, this.nombUser, this.password).subscribe({
+      next: (res) => {
+        if (res[0].Status == 'OK') {
+          this.lstrMensaje = 'Registro Exitoso';
+          console.log('Exitoso');
+        } else {
+          this.lstrMensaje = res[0].Error;
+          console.log('Falló');
+        }
       },
-      error: err => {
-        console.log(err);
-      }
+      // error: err => {
+      //   console.log(err);
+      // }
     });
     console.log("listo");
   }

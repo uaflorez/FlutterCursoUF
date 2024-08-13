@@ -8,13 +8,17 @@
           <p>Hoy es {{ldtFecha | date: "dd/MM/yy"}} </p>
           <p>Hoy es {{ldtFecha | date: "dd/MM/yyyy"}} </p>
           <p>Hoy es {{ldtFecha | json}}</p>
+          <br>
           <p>Valor {{lnumValor}} </p>
           <p>Valor {{lnumValor | currency}} </p>
+          <br>
           <p>Valor {{lnumPerc}} </p>
           <p>Valor {{lnumPerc | percent}} </p>
+          <br>
           <p>Texto {{lstrTexto}} </p>
           <p>Texto {{lstrTexto | lowercase}} </p>
           <p>Texto {{lstrTexto | uppercase}} </p>
+          <br>
     </div>     
     <router-outlet />
   </ng-template>
@@ -23,4 +27,15 @@
           <label>debe ir algo que aun no se que sera</label>
       </div>
   </ng-template>
+  <ng-template #mytemplate>
+    <div>
+      <p>Esta es mi plantilla ejemplo</p>
+    </div>
+  </ng-template>
+
+  <ng-container *ngTemplateOutlet="mytemplate" ></ng-container>
+  <ng-container *ngTemplateOutlet="mytemplate" ></ng-container>
+  <ng-container *ngTemplateOutlet="mytemplate" ></ng-container>
+
+
 </div>
