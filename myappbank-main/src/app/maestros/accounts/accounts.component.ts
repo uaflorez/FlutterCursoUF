@@ -41,8 +41,14 @@ export class AccountsComponent implements OnInit {
       autosizeColumnsByCellContentOnFirstLoad: true,
       enableAutoResizeColumnsByCellContent: true
     };
-    this.CDAccounts.push({id: 'NumeCuent', name:'Número', field: 'NumeCuen', sortable: true, filterable: true});
-    this.CDAccounts.push({id: 'NombCuent', name: 'Nombre', field: 'NombCuen', sortable: true, filterable: true });
+    this.CDAccounts = [
+      {id: 'id', name: 'Id', field: 'id', sortable: true},
+      {id: 'codiUser', name: 'CodiUser', field: 'CodiUser', sortable: true},
+      {id: 'numeCuen', name: 'NumeCuen', field: 'NumeCuen', sortable: true},
+      {id: 'NombCuen', name: 'NombCuen', field: 'NombCuen', sortable: true}
+    ]
+    // this.CDAccounts.push({id: 'NumeCuent', name:'Número', field: 'NumeCuen', sortable: true, filterable: true});
+    // this.CDAccounts.push({id: 'NombCuent', name: 'Nombre', field: 'NombCuen', sortable: true, filterable: true });
     
     console.log('ngOnInit');
   }

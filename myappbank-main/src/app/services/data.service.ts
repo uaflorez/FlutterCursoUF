@@ -17,6 +17,7 @@ export class DataService {
   apiUrlSignUp: string = 'https://erpapipruebas.azurewebsites.net/api/values/signup'
   apiUrlSaveAccounts: string = 'https://erpapipruebas.azurewebsites.net/api/values/SaveAccount';
   apiUrlGetAccounts: string = 'https://erpapipruebas.azurewebsites.net/api/values/GetAccounts';
+  apiUrlSaveTransaction: string = 'https://erpapipruebas.azurewebsites.net/api/values/SaveTran';
 
   //Función para validar un usuario
   fnValiUser(CodiUser: string, PassUser: string): Observable<any> {
@@ -62,6 +63,24 @@ export class DataService {
     console.log('entra');
 
     return this.http.post(this.apiUrlSaveAccounts, AccountInfo, httpOptions).pipe(tap((res: any) => {
+      return res;
+    }));
+  }
+
+  fnSaveTransaction(type: string, numeroCuenta: string, amount: string, descripcion: string, categoria: string, estado: string) {
+    let TransactionInfo: any[] = [];
+    TransactionInfo.push({
+      'Type': type,
+      'NumeTran': numeroCuenta,  // Si 'NumeTran' debe coincidir con 'id' en columnDefinitions
+      'Amount': amount,           // Corrigiendo 'Ammount' a 'Amount'
+      'Category': categoria,      // Asegúrate de que 'Categoria' esté en inglés para coincidir con 'Category'
+      'Description': descripcion, // Coincide con 'description' en columnDefinitions
+      'Status': estado            // Coincide con 'status' en columnDefinitions
+    });
+
+    console.log('entra');
+
+    return this.http.post(this.apiUrlSaveTransaction, TransactionInfo, httpOptions).pipe(tap((res: any) => {
       return res;
     }));
   }
