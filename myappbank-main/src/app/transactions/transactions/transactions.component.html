@@ -1,1 +1,62 @@
 <p>transactions works!</p>
+<div class="container-md">
+	
+	<br>
+    <div data-mdb-input-init class="form-outline form-white mb-4">
+      <label class="form-label" for="typeEmailX">Tipe Cuenta </label>
+	  <select class="form-select" aria-label="Default select example" [(ngModel)]="lstrType">
+		  <option selected value="deposito">Deposito</option>
+		  <!-- <option value="deposito"></option> -->
+		  <option value="retiro">Retiro</option>
+	  </select>
+    </div>
+    <div data-mdb-input-init class="form-outline form-white mb-4">
+      <label class="form-label" for="typePasswordX">Numero Cuenta </label>
+      <input type="text" name="numeroCuenta" id="numeroCuenta" class="form-control form-control-lg" maxlength= "15" placeholder="Numero cuenta" [(ngModel)]="lstrNumeroCuenta"/>
+    </div>
+    <div data-mdb-input-init class="form-outline form-white mb-4">
+      <label class="form-label" for="typeEmailX">Cantidad </label>
+      <input type="number" name="cantidad" id="typeUserName" class="form-control form-control-lg" maxlength="15" placeholder="Cantidad" [(ngModel)]="lstrAmount"/>
+    </div>
+    <div data-mdb-input-init class="form-outline form-white mb-4">
+      <label class="form-label" for="typePasswordX">Categoria</label>
+      <input type="text" name="categoria" id="typePasswordX" class="form-control form-control-lg" maxlength= "15" placeholder="Categoria" [(ngModel)]="lstrCategoria"/>
+    </div>
+    <div data-mdb-input-init class="form-outline form-white mb-4">
+      <label class="form-label" for="typeEmailX">Descripcion </label>
+      <input type="text" name="descripcion" id="typeUserName" class="form-control form-control-lg" maxlength="15" placeholder="Descripcion" [(ngModel)]="lstrDescripcion"/>
+    </div>
+    <div data-mdb-input-init class="form-outline form-white mb-4">
+      <label class="form-label" for="typePasswordX">Estado </label>
+	  <select class="form-select" aria-label="Default select example" [(ngModel)]="lstrEstado">
+		<option selected value="activo">Activo</option>
+		<!-- <option value="deposito"></option> -->
+		<option value="inactivo">Inactivo</option>
+	</select>
+    </div>
+    <button type="button" (click)="fnSaveTransaction()" class="btn btn-primary" >Save Account</button>
+    <br>
+	<div *ngIf="this.mensaje" !=""; then alert></div>
+	<ng-template #alert>
+		<div class="alert alert-primary" role="alert" >{{mensaje}} </div>
+	</ng-template>
+
+	<div *ngIf="this.lBoolPreguntar; then preguntar"></div>
+    <ng-template #preguntar>
+        <label for="text">¿Quiere confirmar el guardado?</label>
+        <br>
+        <button type="button" (click)="this.service.fnSetRestObserver('si')" class="btn btn-primary" >Si</button>
+        <button type="button" (click)="this.service.fnSetRestObserver('no')" class="btn btn-primary" >No</button>
+    </ng-template>
+
+    <br>
+	<div class="container-md">
+		<div id="idgridTransactions" class="grid">
+			<angular-slickgrid gridId="gridTransactions" 
+				[columnDefinitions]="columnDefinitions" 
+				[gridOptions]="GOTransactions"
+				[dataset]="transactions">
+			</angular-slickgrid>
+		</div>
+	</div>	
+</div>
