@@ -74,7 +74,7 @@ export class TransactionsComponent implements OnInit {
         console.log('Datos devueltos por el servicio:', res);
         var lRow = res[0];
         for (var i in lRow) {
-          if (i == "Error") {
+          if (i == 'Error') {
             this.mensaje = res[0].Error;
             return;
           }

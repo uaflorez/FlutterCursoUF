@@ -1,4 +1,3 @@
-<p>transactions works!</p>
 <div class="container-md">
 	
 	<br>
@@ -6,7 +5,6 @@
       <label class="form-label" for="typeEmailX">Tipe Cuenta </label>
 	  <select class="form-select" aria-label="Default select example" [(ngModel)]="lstrType">
 		  <option selected value="deposito">Deposito</option>
-		  <!-- <option value="deposito"></option> -->
 		  <option value="retiro">Retiro</option>
 	  </select>
     </div>
@@ -24,19 +22,19 @@
     </div>
     <div data-mdb-input-init class="form-outline form-white mb-4">
       <label class="form-label" for="typeEmailX">Descripcion </label>
-      <input type="text" name="descripcion" id="typeUserName" class="form-control form-control-lg" maxlength="15" placeholder="Descripcion" [(ngModel)]="lstrDescripcion"/>
+      <input type="text" name="descripcion" id="typeUserNam" class="form-control form-control-lg" maxlength="15" placeholder="Descripcion" [(ngModel)]="lstrDescripcion"/>
     </div>
     <div data-mdb-input-init class="form-outline form-white mb-4">
       <label class="form-label" for="typePasswordX">Estado </label>
 	  <select class="form-select" aria-label="Default select example" [(ngModel)]="lstrEstado">
 		<option selected value="activo">Activo</option>
-		<!-- <option value="deposito"></option> -->
+		
 		<option value="inactivo">Inactivo</option>
 	</select>
     </div>
     <button type="button" (click)="fnSaveTransaction()" class="btn btn-primary" >Save Account</button>
     <br>
-	<div *ngIf="this.mensaje" !=""; then alert></div>
+	<div *ngIf= "this.mensaje != ''; then alert"></div>
 	<ng-template #alert>
 		<div class="alert alert-primary" role="alert" >{{mensaje}} </div>
 	</ng-template>

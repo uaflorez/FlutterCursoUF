@@ -71,11 +71,11 @@ export class DataService {
     let TransactionInfo: any[] = [];
     TransactionInfo.push({
       'Type': type,
-      'NumeTran': numeroCuenta,  // Si 'NumeTran' debe coincidir con 'id' en columnDefinitions
+      'NumeCuen': numeroCuenta,  // Si 'NumeTran' debe coincidir con 'id' en columnDefinitions
       'Amount': amount,           // Corrigiendo 'Ammount' a 'Amount'
-      'Category': categoria,      // Asegúrate de que 'Categoria' esté en inglés para coincidir con 'Category'
-      'Description': descripcion, // Coincide con 'description' en columnDefinitions
-      'Status': estado            // Coincide con 'status' en columnDefinitions
+      'Categoria': categoria,      // Asegúrate de que 'Categoria' esté en inglés para coincidir con 'Category'
+      'Descripcion': descripcion, // Coincide con 'description' en columnDefinitions
+      'Estado': estado            // Coincide con 'status' en columnDefinitions
     });
 
     console.log('entra');
